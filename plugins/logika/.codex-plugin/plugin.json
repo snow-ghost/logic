@@ -1,0 +1,36 @@
+{
+  "name": "logika",
+  "version": "2.0.1",
+  "description": "Classical formal logic from G. Chelpanov's textbook: concepts, judgments, syllogisms, induction, fallacies, laws of thought. Includes logical review, argument repair, and textbook problem solving.",
+  "author": {
+    "name": "Pavel Rykov",
+    "email": "paul@drteam.rocks",
+    "url": "https://t.me/evilfreelancer"
+  },
+  "homepage": "https://github.com/snow-ghost/logic",
+  "repository": "https://github.com/snow-ghost/logic",
+  "license": "MIT",
+  "keywords": [
+    "logic",
+    "reasoning",
+    "syllogism",
+    "fallacies",
+    "induction",
+    "critical-thinking",
+    "education"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "logika",
+    "shortDescription": "Review and repair arguments with classical formal logic.",
+    "longDescription": "Russian-language classical formal logic for reviewing or repairing arguments, checking syllogisms and definitions, identifying fallacies, and solving textbook exercises.",
+    "developerName": "Pavel Rykov",
+    "category": "Education",
+    "capabilities": [],
+    "websiteURL": "https://github.com/snow-ghost/logic",
+    "defaultPrompt": [
+      "Проверь логику этого рассуждения и назови ошибки.",
+      "Исправь аргументацию, не добавляя новых фактов."
+    ]
+  }
+}

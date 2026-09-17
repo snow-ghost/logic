@@ -1,0 +1,33 @@
+{
+  "name": "technical-style-editor",
+  "version": "0.2.0",
+  "description": "Edit Russian technical writing of any genre or length into a direct, evidence-based style while preserving facts, terminology, constraints, and implementation status.",
+  "author": {
+    "name": "Sergei Uskov",
+    "url": "https://github.com/snow-ghost"
+  },
+  "homepage": "https://github.com/snow-ghost/logic",
+  "repository": "https://github.com/snow-ghost/logic",
+  "keywords": [
+    "technical-writing",
+    "editing",
+    "russian",
+    "documentation",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Technical Style Editor",
+    "shortDescription": "Edit any Russian technical text with evidence and precision.",
+    "longDescription": "A Russian-language technical editor for texts of any genre or length. It removes rhetorical filler, unsupported intensifiers, bureaucratic phrasing, and template-like prose while preserving facts, constraints, terminology, and implementation status.",
+    "developerName": "Sergei Uskov",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Отредактируй этот технический текст в прямом доказательном стиле.",
+      "Проверь документ на шаблонные формулировки и неподтверждённые утверждения."
+    ],
+    "websiteURL": "https://github.com/snow-ghost/logic"
+  },
+  "license": "MIT"
+}

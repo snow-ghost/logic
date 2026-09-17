@@ -1,0 +1,26 @@
+{
+  "name": "logic",
+  "plugins": [
+    {
+      "name": "logika",
+      "source": "./plugins/logika",
+      "description": "Review and repair arguments with classical formal logic.",
+      "version": "2.0.1",
+      "category": "education"
+    },
+    {
+      "name": "technical-style-editor",
+      "source": "./plugins/technical-style-editor",
+      "description": "Edit Russian technical writing of any genre or length into a direct, evidence-based style.",
+      "version": "0.2.0",
+      "category": "productivity"
+    }
+  ],
+  "owner": {
+    "name": "snow-ghost"
+  },
+  "metadata": {
+    "description": "Russian formal logic and technical writing skills.",
+    "version": "0.1.0"
+  }
+}

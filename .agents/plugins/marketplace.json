@@ -1,0 +1,32 @@
+{
+  "name": "logic",
+  "plugins": [
+    {
+      "name": "logika",
+      "source": {
+        "source": "local",
+        "path": "./plugins/logika"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    },
+    {
+      "name": "technical-style-editor",
+      "source": {
+        "source": "local",
+        "path": "./plugins/technical-style-editor"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ],
+  "interface": {
+    "displayName": "Logic & Technical Writing"
+  }
+}

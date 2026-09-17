@@ -1,0 +1,20 @@
+{
+  "name": "technical-style-editor",
+  "version": "0.2.0",
+  "description": "Edit Russian technical writing of any genre or length into a direct, evidence-based style while preserving facts, terminology, constraints, and implementation status.",
+  "author": {
+    "name": "Sergei Uskov",
+    "url": "https://github.com/snow-ghost"
+  },
+  "homepage": "https://github.com/snow-ghost/logic",
+  "repository": "https://github.com/snow-ghost/logic",
+  "keywords": [
+    "technical-writing",
+    "editing",
+    "russian",
+    "documentation",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "license": "MIT"
+}
