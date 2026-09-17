@@ -1,7 +1,7 @@
 {
   "name": "logika",
-  "version": "2.0.1",
-  "description": "Classical formal logic from G. Chelpanov's textbook: concepts, judgments, syllogisms, induction, fallacies, laws of thought. Includes logical review, argument repair, and textbook problem solving.",
+  "version": "2.1.0",
+  "description": "Classical formal logic for English and Russian arguments: logical review, argument repair, syllogisms, definitions, induction, fallacies, and textbook exercises based on G. Chelpanov's textbook.",
   "author": {
     "name": "Pavel Rykov",
     "email": "paul@drteam.rocks",

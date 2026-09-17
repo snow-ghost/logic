@@ -1,14 +1,15 @@
 ---
-description: Логическое ревью текста — анализ аргументации без правок (скилл logika)
+description: Review argument logic without rewriting the source (English or Russian).
 ---
 
-Выполни режим «Ревью» скилла logika для текста ниже.
+Review the following text using the logika skill.
 
-1. Прочитай `${CLAUDE_PLUGIN_ROOT}/skills/logika/SKILL.md` (и нужные файлы из его `references/` — как минимум `errors.md`).
-2. Пройди по общему алгоритму анализа: выдели тезис и посылки, определи форму каждого умозаключения, проверь понятия и правила вывода, назови каждую ошибку (русское название + латинское).
-3. Выдай отчёт строго по формату ревью из SKILL.md: вердикт, структура аргументации, таблица ошибок (место — ошибка — почему — как исправить), скрытые посылки, сила недедуктивных выводов.
+1. Read `${CLAUDE_PLUGIN_ROOT}/skills/logika/SKILL.md` and select the English or Russian instructions as directed there.
+2. Read the relevant language-specific references, especially the error catalog.
+3. Apply review mode: identify the thesis and premises, check the inference forms, and explain each logical or evidential issue.
+4. Return the review format from the selected instructions. Use the user's requested response language, otherwise the language of their request, and keep source quotations in their original language.
 
-Текст НЕ переписывай — только анализ. Если пользователь после отчёта попросит исправить, переходи в режим «Правка».
+Do not rewrite the source in this command. If the user subsequently requests a repair, switch to repair mode.
 
-Текст для ревью:
+Text to review:
 $ARGUMENTS

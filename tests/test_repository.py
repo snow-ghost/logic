@@ -7,8 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGINS = {
-    "logika": "2.0.1",
-    "technical-style-editor": "0.2.0",
+    "logika": "2.1.0",
+    "technical-style-editor": "0.3.0",
 }
 FRONTMATTER_NAME = re.compile(r"^name:\s*([^\s]+)\s*$", re.MULTILINE)
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
@@ -76,18 +76,15 @@ class RepositoryLayoutTests(unittest.TestCase):
     def test_skill_relative_links_resolve_inside_each_skill(self):
         for name in PLUGINS:
             skill_root = ROOT / "plugins" / name / "skills" / name
-            entrypoint = skill_root / "SKILL.md"
-            text = entrypoint.read_text(encoding="utf-8")
-
-            for raw_target in MARKDOWN_LINK.findall(text):
-                target = raw_target.strip().split("#", 1)[0]
-                if not target or target.startswith(("http://", "https://", "mailto:")):
-                    continue
-                with self.subTest(skill=name, target=target):
-                    self.assertTrue(
-                        (skill_root / target).is_file(),
-                        f"{entrypoint}: missing relative link {target}",
-                    )
+            for document in skill_root.rglob("*.md"):
+                for raw_target in MARKDOWN_LINK.findall(document.read_text(encoding="utf-8")):
+                    target = raw_target.strip().split("#", 1)[0]
+                    if not target or target.startswith(("http://", "https://", "mailto:")):
+                        continue
+                    with self.subTest(skill=name, document=document.name, target=target):
+                        resolved = (document.parent / target).resolve()
+                        self.assertTrue(resolved.is_file(), f"{document}: missing link {target}")
+                        self.assertTrue(resolved.is_relative_to(skill_root.resolve()))
 
     def test_bundled_python_scripts_parse(self):
         for script in ROOT.glob("plugins/*/skills/*/scripts/*.py"):

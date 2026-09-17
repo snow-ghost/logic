@@ -4,15 +4,15 @@
     {
       "name": "logika",
       "source": "./plugins/logika",
-      "description": "Review and repair arguments with classical formal logic.",
-      "version": "2.0.1",
+      "description": "Classical formal logic for English and Russian arguments: logical review, argument repair, syllogisms, definitions, induction, fallacies, and textbook exercises based on G. Chelpanov's textbook.",
+      "version": "2.1.0",
       "category": "education"
     },
     {
       "name": "technical-style-editor",
       "source": "./plugins/technical-style-editor",
-      "description": "Edit Russian technical writing of any genre or length into a direct, evidence-based style.",
-      "version": "0.2.0",
+      "description": "Edit English and Russian technical writing into direct, evidence-based prose while preserving facts, terminology, constraints, and implementation status.",
+      "version": "0.3.0",
       "category": "productivity"
     }
   ],
@@ -20,7 +20,7 @@
     "name": "snow-ghost"
   },
   "metadata": {
-    "description": "Russian formal logic and technical writing skills.",
-    "version": "0.1.0"
+    "description": "Formal logic and technical writing skills in English and Russian.",
+    "version": "0.2.0"
   }
 }
