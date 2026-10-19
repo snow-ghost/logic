@@ -17,7 +17,9 @@ Read [the extended audit](references/en/extended-audit.md) for that mode.
 
 1. Identify the purpose, audience, and required format.
 2. Read the entire source. Treat facts, numbers, names, constraints, links, and
-   implementation status as fixed unless the author confirms a change.
+   implementation status as fixed unless the author confirms a change. In
+   mathematical writing, also preserve definitions, notation, indices, quantifiers,
+   hypotheses, and the direction of implications.
 3. If a file is available and Python is installed, run
    `python3 scripts/lint_technical_style.py PATH --language en`. Add `--extended`
    for extended mode. Use `--language auto` for mixed English/Russian text.
@@ -36,8 +38,9 @@ Read [the extended audit](references/en/extended-audit.md) for that mode.
    outputs, errors, measurable results, and consistency across sections.
 10. Rerun the diagnostic script and interpret each finding in context. A match
     identifies a passage for review; it does not require a replacement.
-11. Read the revision on its own, then compare it with the source to verify that
-    facts, qualifications, and readiness claims have been preserved.
+11. Read the revision on its own. Resolve each pronoun to its referent and each
+    symbol to the quantity it denotes. Compare against the source to verify that
+    facts, qualifications, mathematical meaning, and readiness claims are preserved.
 
 ## Editing rules
 
@@ -55,6 +58,36 @@ Read [the extended audit](references/en/extended-audit.md) for that mode.
   like to discuss” when the sentence can state the subject directly.
 - Preserve modal force: “must,” “may,” “can,” “planned,” and “verified” are not
   interchangeable. Do not turn a permission into a requirement or a plan into a fact.
+
+## Precision in explanations and mathematical proofs
+
+Apply these rules in basic mode too, including when introducing notation or
+describing a proof or algorithm.
+
+- Remove unsupported evaluations such as “conveniently,” “fortunately,” “elegant,”
+  “natural,” “easy,” “better,” and “simpler.” State the operation or an established
+  property: “Define…” or “This substitution eliminates the term…”. Explain a
+  choice when its reason is known and relevant; do not invent a benefit to replace
+  an evaluation. Preserve defined terms such as “natural number” or “simple group,”
+  and comparisons with a stated criterion or formula.
+- Replace figurative agency (“the equality forces us,” “the condition compels,”
+  “the bound dictates”) with the explicit relationship: “Equation (2) implies…”
+  or “Condition (3) excludes…”. Name both the grounds and the consequence. If the
+  source does not justify the step, mark the gap rather than making it sound proved.
+  Preserve literal coercion or specified system behavior when that is the actual claim.
+- Resolve “its,” “their,” “this,” “that,” “the former/latter,” and “corresponding.”
+  When two objects could be meant, repeat the object's name or symbol, even if
+  this repeats a noun. A quantity definition should name its subject: “the
+  displacement of card i” or “the coordinate of the target position.” Unambiguous
+  pronouns are acceptable. If context does not determine the referent, ask for
+  clarification or mark `[unclear referent]`.
+- Distinguish an object, its position, coordinate, displacement, and displacement
+  magnitude. Preserve signs, domains, and index meanings. Do not introduce a new
+  formula, replace displacement with distance, or add premises to repair the prose.
+
+See [editing patterns](references/en/patterns.md) for examples. The linter flags
+phrases for review; independently check referents and mathematical implications
+in context even when no pattern matches.
 
 ## Constraints
 

@@ -37,6 +37,21 @@ BASE_RULES = (
         "Check whether this expression of certainty adds evidence.",
     ),
     (
+        "unsupported-evaluation",
+        r"\b(?:(?:in)?convenient(?:ly)?|fortunate(?:ly)?|elegant(?:ly)?|nicely|easily|easier|simpler|better|well[- ]chosen)\b",
+        "Remove the evaluation or state the established criterion; do not invent a benefit. Preserve a term with a defined meaning.",
+    ),
+    (
+        "figurative-agency",
+        r"\b(?:forces?|forced|forcing|compels?|compelled|compelling|dictates?|dictated|dictating|obliges?|obliged)\b",
+        "Review figurative agency: state the premise and consequence explicitly without inventing a proof. Preserve literal actions or established terms.",
+    ),
+    (
+        "pronoun-reference",
+        r"\b(?:its|their)\s+(?:displacements?|positions?|coordinates?|values?|differences?|sums?|bounds?|indices|index|properties|property|quantities|quantity|lengths?|sizes?|cardinality|limits?)\b|\bthe\s+(?:former|latter)\b",
+        "Check the pronoun's referent in context. If two objects are possible, repeat the object's name or symbol; the phrase alone does not establish ambiguity.",
+    ),
+    (
         "promotional-adjective",
         r"\b(?:unique|revolutionary|innovative|powerful|groundbreaking|cutting[- ]edge|game[- ]changing)\b",
         "Replace promotional evaluation with a supported distinguishing property.",

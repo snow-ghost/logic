@@ -67,6 +67,61 @@ With a documented mechanism but no measurement:
 Without either kind of evidence, flag the claim for clarification. Do not turn
 an intended effect into a measured result.
 
+## Convenience and approval presented as explanation
+
+“Conveniently,” “fortunately,” “elegant,” “easy,” “better,” and “simpler” do not
+establish a step of a proof. Remove the evaluation or state the known reason for
+the choice. Do not invent a reason.
+
+Before:
+
+> It is convenient to denote the displacement of card i by u_i.
+
+After:
+
+> Denote the displacement of card i by u_i.
+
+If the source establishes a benefit, name it: “Under x = t + 1, the coefficient
+of t vanishes.” Preserve formal comparisons such as `a < b`, defined terms such
+as “natural number” and “simple group,” and comparisons against a stated criterion.
+
+## Figurative agency in a deduction
+
+Before:
+
+> The equality u_i = 0 forces the card to stay in place.
+
+After, if u_i already denotes the displacement of card i:
+
+> The equality u_i = 0 implies that card i does not move.
+
+Also review “compels,” “dictates,” and “obliges us.” Identify the actual premise
+and consequence. If the step is unsupported, mark the gap rather than concealing
+it with a verb replacement. Preserve literal actions and established terms such
+as “forced process termination” when that is what the source describes.
+
+## Ambiguous reference in a quantity definition
+
+Before:
+
+> On the unrolled line, each card is assigned a target position. Let its displacement be 𝑢_𝑖.
+
+“Its” can refer to either the card or the position. If the context establishes
+that the card is meant:
+
+> On the unrolled line, each card i is assigned a target position. Denote the displacement of card i by 𝑢_𝑖.
+
+If the target position is meant, name that position instead. Do not silently
+choose a mathematical interpretation from these two sentences alone.
+
+Apply the same check to “their difference,” “this quantity,” “the latter,” and
+“the corresponding index.” Repeat a precise noun or symbol when two referents
+are possible. Keep an unambiguous phrase such as “card i and its target position.”
+Do not change displacement into coordinate or displacement magnitude, and do not
+add a coordinate-difference formula that the source has not established.
+
+A pronoun finding is a prompt to inspect the context, not a proof of ambiguity.
+
 ## Promotional wording
 
 Replace “unique,” “revolutionary,” “powerful,” “cutting-edge,” or “innovative” with

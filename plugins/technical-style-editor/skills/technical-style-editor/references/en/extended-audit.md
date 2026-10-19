@@ -62,6 +62,12 @@ Supply missing information only from available evidence; otherwise ask the autho
 
 ## 5. Terminology
 
+In proof explanations, check variable definitions, index meanings, and pronoun
+referents. Connect each inference to a stated hypothesis or established result.
+“Convenient,” “elegant,” and “forces” do not supply that justification. Preserve
+formal comparisons, quantifiers, and the distinction between necessary and
+sufficient conditions. These wording checks also apply in basic mode.
+
 Keep a short concept-to-term mapping. Distinguish data, information, knowledge,
 rules, scripts, model conclusions, and operator decisions. A synonym is acceptable
 only if it preserves the technical referent. Expand unfamiliar abbreviations

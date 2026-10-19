@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PLUGINS = {
     "logika": "2.1.0",
-    "technical-style-editor": "0.3.0",
+    "technical-style-editor": "0.4.0",
 }
 FRONTMATTER_NAME = re.compile(r"^name:\s*([^\s]+)\s*$", re.MULTILINE)
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")

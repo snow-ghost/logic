@@ -115,6 +115,55 @@ class BilingualLinterTests(unittest.TestCase):
             invalid = subprocess.run([sys.executable, str(SCRIPT), str(path)], capture_output=True)
             self.assertEqual(invalid.returncode, 2)
 
+    def test_evaluations_are_reviewed_in_basic_mode(self):
+        for language, samples in (
+            ("ru", ("Здесь удобно ввести t.", "Это удачный выбор обозначения.", "Сумма удачно сокращается.", "Теперь проще выбрать i.")),
+            ("en", ("It is convenient to introduce t.", "This is an elegant choice.", "The terms cancel nicely.", "This choice is simpler.")),
+        ):
+            for text in samples:
+                with self.subTest(language=language, text=text):
+                    result = run_lint(text, "--language", language)
+                    self.assertEqual(result.returncode, 1)
+                    self.assertIn("unsupported-evaluation", {item["rule"] for item in json.loads(result.stdout)})
+
+    def test_figurative_agency_and_explicit_inference(self):
+        for language, source, revised in (
+            ("ru", "Равенство u_i = 0 вынуждает карточку остаться на месте.", "Из равенства u_i = 0 следует, что карточка i не перемещается."),
+            ("en", "The equality u_i = 0 forces the card to stay in place.", "The equality u_i = 0 implies that card i does not move."),
+        ):
+            with self.subTest(language=language):
+                flagged = run_lint(source, "--language", language)
+                self.assertEqual(flagged.returncode, 1)
+                self.assertIn("figurative-agency", {item["rule"] for item in json.loads(flagged.stdout)})
+                clean = run_lint(revised, "--language", language)
+                self.assertEqual(clean.returncode, 0)
+
+    def test_quantity_references_flag_both_russian_spellings_and_english(self):
+        prefix = "На развёрнутой прямой каждой карточке назначается целевая позиция.\n"
+        for language, source, revised in (
+            ("ru", prefix + "Обозначим её перемещение через 𝑢_𝑖.", prefix + "Обозначим перемещение карточки i через 𝑢_𝑖."),
+            ("ru", prefix + "Обозначим ее перемещение через 𝑢_𝑖.", prefix + "Обозначим перемещение карточки i через 𝑢_𝑖."),
+            ("en", "Each card has a target position.\nLet its displacement be 𝑢_𝑖.", "Each card has a target position.\nDenote the displacement of card i by 𝑢_𝑖."),
+        ):
+            with self.subTest(language=language, source=source):
+                flagged = run_lint(source, "--language", language)
+                self.assertEqual(flagged.returncode, 1)
+                findings = [item for item in json.loads(flagged.stdout) if item["rule"] == "pronoun-reference"]
+                self.assertEqual(len(findings), 1)
+                self.assertEqual(findings[0]["line"], 2)
+                self.assertIn("𝑢_𝑖", findings[0]["excerpt"])
+                self.assertEqual(run_lint(revised, "--language", language).returncode, 0)
+
+    def test_formal_comparisons_and_defined_terms_are_preserved(self):
+        for language, text in (
+            ("ru", "Пусть n — естественное число, а G — простая группа. Для всех i ∈ I имеем u_i ≤ v_i. При n > 2 оценка содержит на один член меньше."),
+            ("en", "Let n be a natural number and G a simple group. For all i ∈ I, u_i ≤ v_i. When n > 2, the bound contains one fewer term."),
+        ):
+            with self.subTest(language=language):
+                result = run_lint(text, "--language", language)
+                self.assertEqual(result.returncode, 0)
+                self.assertEqual(json.loads(result.stdout), [])
+
 
 if __name__ == "__main__":
     unittest.main()

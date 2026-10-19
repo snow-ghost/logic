@@ -2,16 +2,18 @@
 name: technical-style-editor
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   languages: "en,ru"
 description: >
   Edit English or Russian technical writing into clear, direct, evidence-based
   prose. Remove rhetorical contrasts, filler, promotional claims, bureaucratic
-  wording, and repetitive structure while preserving facts, terminology,
-  constraints, and implementation status. Use for technical documents of any
-  genre or length, editorial reviews, and checks for formulaic writing.
+  wording, unsupported evaluations, figurative agency, ambiguous references,
+  and repetitive structure while preserving facts, terminology, constraints,
+  and implementation status. Use for technical documents, mathematical proofs
+  and explanations, editorial reviews, and checks for formulaic writing.
   Русские запросы: «отредактируй технический текст», «убери канцелярит»,
-  «проверь технический стиль», «проверь на признаки машинного текста».
+  «проверь технический стиль», «отредактируй описание математического доказательства»,
+  «проверь на признаки машинного текста».
 ---
 
 # Technical Style Editor / Редактор технического стиля

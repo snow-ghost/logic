@@ -1,7 +1,7 @@
 {
   "name": "technical-style-editor",
-  "version": "0.3.0",
-  "description": "Edit English and Russian technical writing into direct, evidence-based prose while preserving facts, terminology, constraints, and implementation status.",
+  "version": "0.4.0",
+  "description": "Edit English and Russian technical writing and mathematical proof explanations into precise prose with explicit referents, justified comparisons, and preserved facts, notation, and implementation status.",
   "author": {
     "name": "Sergei Uskov",
     "url": "https://github.com/snow-ghost"
@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "Technical Style Editor",
     "shortDescription": "Edit English or Russian technical prose with precision.",
-    "longDescription": "Edit English and Russian technical writing into direct, evidence-based prose while preserving facts, terminology, constraints, and implementation status.",
+    "longDescription": "Edit English and Russian technical writing and mathematical proof explanations into precise prose with explicit referents, justified comparisons, and preserved facts, notation, and implementation status.",
     "developerName": "Sergei Uskov",
     "category": "Productivity",
     "capabilities": [],

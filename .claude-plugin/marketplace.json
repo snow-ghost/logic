@@ -11,8 +11,8 @@
     {
       "name": "technical-style-editor",
       "source": "./plugins/technical-style-editor",
-      "description": "Edit English and Russian technical writing into direct, evidence-based prose while preserving facts, terminology, constraints, and implementation status.",
-      "version": "0.3.0",
+      "description": "Edit English and Russian technical writing and mathematical proof explanations into precise prose with explicit referents, justified comparisons, and preserved facts, notation, and implementation status.",
+      "version": "0.4.0",
       "category": "productivity"
     }
   ],
@@ -21,6 +21,6 @@
   },
   "metadata": {
     "description": "Formal logic and technical writing skills in English and Russian.",
-    "version": "0.2.0"
+    "version": "0.2.1"
   }
 }

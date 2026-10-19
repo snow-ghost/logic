@@ -5,7 +5,7 @@ Two skills for **Codex, Claude Code, and OpenCode**, with instructions and refer
 | Skill | Purpose | Version | Instructions |
 |---|---|---|---|
 | `logika` | Review and repair arguments; check syllogisms, definitions, induction, and fallacies using Chelpanov's classical logic | 2.1.0 | [English](plugins/logika/skills/logika/SKILL.en.md) · [Russian](plugins/logika/skills/logika/SKILL.ru.md) |
-| `technical-style-editor` | Edit technical writing while preserving facts, terminology, constraints, and implementation status | 0.3.0 | [English](plugins/technical-style-editor/skills/technical-style-editor/SKILL.en.md) · [Russian](plugins/technical-style-editor/skills/technical-style-editor/SKILL.ru.md) |
+| `technical-style-editor` | Edit technical writing while preserving facts, terminology, constraints, and implementation status | 0.4.0 | [English](plugins/technical-style-editor/skills/technical-style-editor/SKILL.en.md) · [Russian](plugins/technical-style-editor/skills/technical-style-editor/SKILL.ru.md) |
 
 ## Language selection
 
@@ -124,7 +124,7 @@ OpenCode also discovers skills in `~/.agents/skills/` and `~/.claude/skills/`, s
 
 **Logic:** request a review for diagnosis without rewriting, a repair for diagnosis followed by a revised argument, or an exercise solution for a step-by-step explanation. Benchmark JSON is reserved for explicitly requested BQA/MCQA tasks. Validity and truth of premises are assessed separately.
 
-**Technical editing:** basic mode edits style and structure. Extended mode checks evidence for comparisons, causal claims, quality, and implementation readiness. Findings from the diagnostic script require human or agent review; they neither prove an error nor establish machine authorship.
+**Technical editing:** basic mode edits style and structure, including mathematical proof explanations. It removes unsupported evaluations such as “convenient” or “elegant,” replaces figurative agency with explicit premises and consequences, and resolves ambiguous pronouns by naming their referents. Defined terms, formal comparisons, notation, and hypotheses are preserved. Extended mode checks evidence for comparisons, causal claims, quality, and implementation readiness. Findings from the diagnostic script require human or agent review; they neither prove an error nor establish machine authorship.
 
 You can combine the skills:
 
@@ -143,7 +143,7 @@ python3 plugins/technical-style-editor/skills/technical-style-editor/scripts/lin
 
 Use `--language ru` for Russian, or `--language auto` (the default) to run both sets of phrase rules, including on mixed-language text. Phrase findings use the language of their rule; in auto mode, structural messages follow the predominant language of the passage and the summary follows the document.
 
-Add `--json` for structured output. Use `-` as the path to read standard input. The script does not modify the source. Exit codes are `0` for no findings, `1` for passages requiring review, and `2` for an input or argument error. Enable `--forbid-yo` (Russian only) or `--forbid-long-dash` only when the author requests those restrictions.
+Add `--json` for structured output. Use `-` as the path to read standard input. The script does not modify the source. Pronoun findings are prompts to review the context; the script cannot determine the intended referent or validate a mathematical inference. Exit codes are `0` for no findings, `1` for passages requiring review, and `2` for an input or argument error. Enable `--forbid-yo` (Russian only) or `--forbid-long-dash` only when the author requests those restrictions.
 
 ## Repository layout and validation
 

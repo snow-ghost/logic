@@ -5,8 +5,8 @@ The entire collection is distributed under the [MIT License](LICENSE).
 | Component | Author and source | Version | License |
 |---|---|---|---|
 | `logika` | Pavel Rykov, [EvilFreelancer/logika](https://github.com/EvilFreelancer/logika); bilingual adaptation by Sergei Uskov | Based on 2.0.0; current version 2.1.0 | [MIT](plugins/logika/LICENSE) |
-| `technical-style-editor` | Sergei Uskov ([snow-ghost](https://github.com/snow-ghost)) | 0.3.0 | [MIT](plugins/technical-style-editor/LICENSE) |
-| Plugin catalogs and package checks | Sergei Uskov ([snow-ghost](https://github.com/snow-ghost)) | 0.2.0 | [MIT](LICENSE) |
+| `technical-style-editor` | Sergei Uskov ([snow-ghost](https://github.com/snow-ghost)) | 0.4.0 | [MIT](plugins/technical-style-editor/LICENSE) |
+| Plugin catalogs and package checks | Sergei Uskov ([snow-ghost](https://github.com/snow-ghost)) | 0.2.1 | [MIT](LICENSE) |
 
 ## Contents
 
@@ -29,3 +29,5 @@ The entire collection is distributed under the [MIT License](LICENSE).
 - English editing examples and phrase rules cover English rhetorical contrasts, filler, promotional wording, comparisons, and bureaucratic phrasing.
 - The diagnostic script retains the Russian rules and adds `--language en`, `--language ru`, and `--language auto`. Auto mode runs both rule sets, including on mixed-language text.
 - The script only reports passages for review; it does not rewrite files or determine their authorship.
+
+- Version 0.4.0 adds basic-mode guidance for unsupported evaluations, figurative agency, ambiguous references, and mathematical proof explanations in both languages, with matching diagnostic hints. Formal notation, hypotheses, and defined terms remain part of the preserved source meaning.
